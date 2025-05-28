@@ -43,6 +43,8 @@ body {
 .projects {
     width: 100%;
     max-width: 500px;
+    text-align: center;
+    color: #007acc;
 }
 
 .projects h3 {
@@ -62,6 +64,10 @@ body {
     color: #007acc;
     font-weight: bold;
     font-size: 16px;
+}
+
+a:hover {
+    color: darkgray;
 }
 
 .project p {

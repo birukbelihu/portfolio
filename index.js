@@ -15,16 +15,16 @@ fetch('https://api.github.com/users/BirukBelihu/repos')
     .then(repos => {
         const container = document.getElementById('projectList');
         repos
+            .filter(repo => !repo.fork) // Exclude forked repos
             .sort((a, b) => b.stargazers_count - a.stargazers_count)
             .forEach(repo => {
                 const project = document.createElement('div');
                 project.className = 'project';
-                const forkBadge = repo.fork ? `<span class="badge">Forked</span>` : '';
                 project.innerHTML = `
           <a href="${repo.html_url}" target="_blank">
-            ${repo.name} ${forkBadge}
+            ${repo.name}
           </a>
-          <p>${repo.description || 'No description available.'}</p>
+          <p>${repo.description || 'No Description Available.'}</p>
           <div class="meta">
             Language: ${repo.language || 'N/A'} | ★ ${repo.stargazers_count}
           </div>
@@ -33,6 +33,6 @@ fetch('https://api.github.com/users/BirukBelihu/repos')
             });
     })
     .catch(error => {
-        console.error('Error fetching repos:', error);
-        document.getElementById('projectList').innerHTML += `<p>Failed to load projects.</p>`;
+        console.error("Unable To Fetch GitHub Repositories Due To", error);
+        document.getElementById('projectList').innerHTML += `<p>Unable To Load Projects.</p>`;
     });
