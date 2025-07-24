@@ -7,7 +7,6 @@ fetch('https://api.github.com/users/BirukBelihu')
     .then(user => {
         document.querySelector('.profile-img').src = user.avatar_url;
         document.querySelector('.username').textContent = `${user.login} - Overview`;
-        document.querySelector('.description').textContent = `${user.name || user.login} has ${user.public_repos} repositories available. Follow their code on GitHub.`;
     });
 
 fetch('https://api.github.com/users/BirukBelihu/repos')
