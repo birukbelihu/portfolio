@@ -1,5 +1,5 @@
 # MyGitHubPortfolio
 
-This Is My Portfolio Source Code Hosted On GitHub Pages.
+This repository contains source code of my portfolio hosted on GitHub pages.
 
-https://birukbelihu.github.io/portfolio/
+[BirukBelihu)[https://birukbelihu.github.io/portfolio/]
